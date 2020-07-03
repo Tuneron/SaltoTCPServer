@@ -55,9 +55,6 @@ public class Main {
                 convertStringAndAdd(list, convert);
                 System.out.println(list);
 
-                if(data[0] == 0x5)
-                    System.out.println("server ready");
-
                 socket.close();
                 System.out.println("Connection close!");
             }
