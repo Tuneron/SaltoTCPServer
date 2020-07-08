@@ -52,6 +52,8 @@ public class Main {
                     list.add(fieldByte);
                 }
 
+                writer.write(answerPositive, 0, 1);
+
                 convertStringAndAdd(list, convert);
                 System.out.println(list);
 
