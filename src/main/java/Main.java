@@ -13,7 +13,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int port = 6868;
+        int port = 7878;
 
         try (ServerSocket serverSocket = new ServerSocket(port)) {
 
@@ -41,12 +41,12 @@ public class Main {
                 if(start == ENQ)
                 writer.write(answerPositive, 0, 1);
 
-                int len = reader.readInt();
-                System.out.println("Message length = " + len);
-                byte[] data = new byte[len];
-                if (len > 0) {
-                    reader.readFully(data);
-                }
+                byte[] data = new byte[1024];
+
+                reader.read(data);
+
+                System.out.println("Message length = " + data.length);
+
                 List<Byte> list = new ArrayList<Byte>();
                 for (byte fieldByte : data) {
                     list.add(fieldByte);
